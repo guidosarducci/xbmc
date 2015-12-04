@@ -3257,6 +3257,7 @@ bool CGUIInfoManager::GetMultiInfoBool(const GUIInfo &info, int contextWindow, c
           if (m_currentFile->HasPVRChannelInfoTag())
             strContent = "livetv";
           bReturn = StringUtils::EqualsNoCase(m_stringParameters[info.GetData1()], strContent);
+          CLog::Log(LOGNOTICE, "VideoPlayer.Content(): strContent: \"%s\", stringParameters: \"%s\", HasVideoInfoTag?: %s, MediaType: \"%s\"", strContent.c_str(), m_stringParameters[info.GetData1()].c_str(), m_currentFile->HasVideoInfoTag() ? "True" : "False", m_currentFile->HasVideoInfoTag() ? m_currentFile->GetVideoInfoTag()->m_type.c_str() : "N/A");
         }
         break;
       case CONTAINER_SORT_METHOD:
