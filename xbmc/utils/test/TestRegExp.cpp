@@ -152,7 +152,7 @@ TEST_F(TestRegExpLog, DumpOvector)
   unsigned int bytesread;
   XFILE::CFile file;
 
-  std::string appName = CCompileInfo::GetAppName();
+  std::string appName = "Kodi";
   StringUtils::ToLower(appName);
   logfile = CSpecialProtocol::TranslatePath("special://temp/") + appName + ".log";
   EXPECT_TRUE(CLog::Init(CSpecialProtocol::TranslatePath("special://temp/").c_str()));

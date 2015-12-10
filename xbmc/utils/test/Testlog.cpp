@@ -48,7 +48,7 @@ TEST_F(Testlog, Log)
   XFILE::CFile file;
   CRegExp regex;
 
-  std::string appName = CCompileInfo::GetAppName();
+  std::string appName = "Kodi";
   StringUtils::ToLower(appName);
   logfile = CSpecialProtocol::TranslatePath("special://temp/") + appName + ".log";
   EXPECT_TRUE(CLog::Init(CSpecialProtocol::TranslatePath("special://temp/").c_str()));
@@ -104,7 +104,7 @@ TEST_F(Testlog, MemDump)
   CRegExp regex;
   char refdata[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
-  std::string appName = CCompileInfo::GetAppName();
+  std::string appName = "Kodi";
   StringUtils::ToLower(appName);
   logfile = CSpecialProtocol::TranslatePath("special://temp/") + appName + ".log";
   EXPECT_TRUE(CLog::Init(CSpecialProtocol::TranslatePath("special://temp/").c_str()));
@@ -138,7 +138,7 @@ TEST_F(Testlog, SetLogLevel)
 {
   std::string logfile;
 
-  std::string appName = CCompileInfo::GetAppName();
+  std::string appName = "Kodi";
   StringUtils::ToLower(appName);
   logfile = CSpecialProtocol::TranslatePath("special://temp/") + appName + ".log";
   EXPECT_TRUE(CLog::Init(CSpecialProtocol::TranslatePath("special://temp/").c_str()));
