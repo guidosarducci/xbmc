@@ -110,7 +110,7 @@ bool CLog::Init(const std::string& path)
   // the log folder location is initialized in the CAdvancedSettings
   // constructor and changed in CApplication::Create()
 
-  std::string appName = CCompileInfo::GetAppName();
+  std::string appName = "Kodi";
   StringUtils::ToLower(appName);
   return s_globals.m_platform.OpenLogFile(path + appName + ".log", path + appName + ".old.log");
 }
