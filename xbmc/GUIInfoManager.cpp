@@ -3258,6 +3258,17 @@ bool CGUIInfoManager::GetMultiInfoBool(const GUIInfo &info, int contextWindow, c
             strContent = "livetv";
           bReturn = StringUtils::EqualsNoCase(m_stringParameters[info.GetData1()], strContent);
           CLog::Log(LOGNOTICE, "VideoPlayer.Content(): strContent: \"%s\", stringParameters: \"%s\", HasVideoInfoTag?: %s, MediaType: \"%s\"", strContent.c_str(), m_stringParameters[info.GetData1()].c_str(), m_currentFile->HasVideoInfoTag() ? "True" : "False", m_currentFile->HasVideoInfoTag() ? m_currentFile->GetVideoInfoTag()->m_type.c_str() : "N/A");
+          if (m_currentFile->HasVideoInfoTag())
+          {
+            const CVideoInfoTag *tag = m_currentFile->GetVideoInfoTag();
+            CLog::Log(LOGNOTICE, "%s::%s - m_currentFile->GetVideoInfoTag()->...", "CGUIInfoManager", __func__);
+            CLog::Log(LOGNOTICE, "..->m_strTitle = %s", tag->m_strTitle.c_str());
+            CLog::Log(LOGNOTICE, "..->m_strIMDBNumber = %s", tag->m_strIMDBNumber.c_str());
+            CLog::Log(LOGNOTICE, "..->m_basePath = %s", tag->m_basePath.c_str());
+            CLog::Log(LOGNOTICE, "..->m_strPath = %s", tag->m_strPath.c_str());
+            CLog::Log(LOGNOTICE, "..->m_strFile = %s", tag->m_strFile.c_str());
+            CLog::Log(LOGNOTICE, "..->m_strFileNameAndPath = %s", tag->m_strFileNameAndPath.c_str());
+          }
         }
         break;
       case CONTAINER_SORT_METHOD:
