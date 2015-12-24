@@ -2462,7 +2462,7 @@ if echo "$libdir" | grep -q '${exec_prefix}'; then
 fi
 eval "APP_PREFIX=${prefix}"
 eval "APP_LIB_DIR=${libdir}/${APP_NAME_LC}"
-eval "APP_INCLUDE_DIR=${includedir}/${APP_NAME_LC}"
+eval "APP_INCLUDE_DIR=${includedir}/kodi"
 AC_SUBST(APP_PREFIX)
 AC_SUBST(APP_LIB_DIR)
 AC_SUBST(APP_INCLUDE_DIR)
