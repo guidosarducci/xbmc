@@ -563,10 +563,10 @@ endif
 
 	@test -z "$(DESTDIR)" && gtk-update-icon-cache -f -q -t $(datadir)/icons/hicolor || :
 
-	@echo "Copying bindings to $(DESTDIR)$(includedir)/@APP_NAME_LC@"
-	@install -d $(DESTDIR)$(includedir)/@APP_NAME_LC@
+	@echo "Copying bindings to $(DESTDIR)$(includedir)/kodi"
+	@install -d $(DESTDIR)$(includedir)/kodi
 	@for f in $(BINDINGS); do \
-	  install -m 0644 $$f $(DESTDIR)$(includedir)/@APP_NAME_LC@ ; \
+	  install -m 0644 $$f $(DESTDIR)$(includedir)/kodi; \
 	done
 	@for f in project/cmake/*.cmake; do \
 	  install -m 0644 $$f $(DESTDIR)$(libdir)/@APP_NAME_LC@; \
@@ -574,7 +574,7 @@ endif
 	@for f in project/cmake/scripts/common/*.cmake; do \
 	  install -m 0644 $$f $(DESTDIR)$(libdir)/@APP_NAME_LC@; \
 	done
-	@cd $(DESTDIR)$(includedir); [ -L xbmc ] || [ -d xbmc ] || ln -s @APP_NAME_LC@ xbmc
+	@cd $(DESTDIR)$(includedir); [ -L xbmc ] || [ -d xbmc ] || ln -s kodi xbmc
 
 uninstall:
 	@echo "Removing @APP_NAME@..."
@@ -583,7 +583,7 @@ uninstall:
 	@rm -rf $(DESTDIR)$(bindir)/@APP_NAME_LC@-standalone
 	@rm -rf $(DESTDIR)$(datarootdir)/xsessions/@APP_NAME_LC@.desktop
 	@rm -rf $(libdir)/lib@APP_NAME_LC@_*
-	@rm -rf $(prefix)/include/@APP_NAME_LC@
+	@rm -rf $(prefix)/include/kodi
 	@echo "Done!"
 
 clean-@APP_NAME_LC@.bin:

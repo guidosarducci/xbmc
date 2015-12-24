@@ -33,7 +33,7 @@ if(NOT EXISTS "${APP_LIB_DIR}/")
   file(MAKE_DIRECTORY ${APP_LIB_DIR})
 endif()
 
-set(APP_INCLUDE_DIR ${DEPENDS_PATH}/include/${APP_NAME_LC})
+set(APP_INCLUDE_DIR ${DEPENDS_PATH}/include/kodi)
 if(NOT EXISTS "${APP_INCLUDE_DIR}/")
   file(MAKE_DIRECTORY ${APP_INCLUDE_DIR})
 endif()

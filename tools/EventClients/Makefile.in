@@ -25,8 +25,8 @@ install: Clients/WiiRemote/WiiRemote
 	echo 'ICON_PATH="$(datarootdir)/pixmaps/@APP_NAME_LC@/"' > $(DESTDIR)$(PYTHON_SITEDIR)/@APP_NAME_LC@/defs.py
 	cp -a lib/python/* $(DESTDIR)$(PYTHON_SITEDIR)/@APP_NAME_LC@/
 	cp -a Clients/PS3\ BD\ Remote/ps3_remote.py $(DESTDIR)$(PYTHON_SITEDIR)/@APP_NAME_LC@/
-	mkdir -p $(DESTDIR)$(includedir)/@APP_NAME_LC@
-	cp -a lib/c++/* $(DESTDIR)$(includedir)/@APP_NAME_LC@/
+	mkdir -p $(DESTDIR)$(includedir)/kodi
+	cp -a lib/c++/* $(DESTDIR)$(includedir)/kodi/
 	mkdir -p $(DESTDIR)$(datarootdir)/pixmaps/@APP_NAME_LC@
 	cp -a icons/* $(DESTDIR)$(datarootdir)/pixmaps/@APP_NAME_LC@/
 
