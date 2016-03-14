@@ -3244,7 +3244,7 @@ bool CGUIInfoManager::GetMultiInfoBool(const GUIInfo &info, int contextWindow, c
         }
       case VIDEOPLAYER_CONTENT:
         {
-          CStdString strContent="movies";
+          std::string strContent="movies";
           if (!m_currentFile->HasVideoInfoTag() || m_currentFile->GetVideoInfoTag()->IsEmpty())
             strContent = "files";
           if (m_currentFile->HasVideoInfoTag() && m_currentFile->GetVideoInfoTag()->m_iSeason > -1) // episode
