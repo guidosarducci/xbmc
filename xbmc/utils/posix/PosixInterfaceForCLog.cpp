@@ -51,7 +51,7 @@ bool CPosixInterfaceForCLog::OpenLogFile(const std::string &logFilename, const s
   (void)remove(backupOldLogToFilename.c_str()); // if it's failed, try to continue
   (void)rename(logFilename.c_str(), backupOldLogToFilename.c_str()); // if it's failed, try to continue
 
-  m_file = (FILEWRAP*)fopen(logFilename.c_str(), "wb");
+  m_file = (FILEWRAP*)fopen(logFilename.c_str(), "wbe");
   if (!m_file)
     return false; // error, can't open log file
 
